@@ -16,6 +16,7 @@ Standard `loading="lazy"` leaves users staring at empty white boxes. **useblysh*
 * **Zero Layout Shift:** Reserve image space instantly to prevent page jumping.
 * **Performance:** Replace 1MB images with 20-byte strings during the initial load.
 * **Modern:** Fully typed with TypeScript and optimized for React 18/19.
+<img width="1441" height="387 alt="image" src="https://github.com/user-attachments/assets/3e9df482-5872-49d8-8fcf-f63fdaacde56" />
 
 <img width="1441" height="387" alt="image" src="https://github.com/user-attachments/assets/50292c6d-f475-49ca-88bb-1fbeb74307be" />
 
