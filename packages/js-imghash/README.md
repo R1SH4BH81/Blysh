@@ -16,6 +16,8 @@ Standard `loading="lazy"` leaves users staring at empty white boxes. **useblysh*
 * **Zero Layout Shift:** Reserve image space instantly to prevent page jumping.
 * **Performance:** Replace 1MB images with 20-byte strings during the initial load.
 * **Modern:** Fully typed with TypeScript and optimized for React 18/19.
+  
+<img width="1441" height="387" alt="image" src="https://github.com/user-attachments/assets/3e9df482-5872-49d8-8fcf-f63fdaacde56" />
 
 <img width="1441" height="387" alt="image" src="https://github.com/user-attachments/assets/50292c6d-f475-49ca-88bb-1fbeb74307be" />
 
@@ -28,10 +30,6 @@ Standard `loading="lazy"` leaves users staring at empty white boxes. **useblysh*
 npm install useblysh
 ```
 
-### Backend (Python)
-```bash
-pip install useblysh
-```
 
 ---
 
@@ -75,20 +73,7 @@ const MyGallery = ({ storedHash, imageUrl }) => (
 ```
 
 
-### **Backend: Generate Hash (Python)**
-Perfect for generating placeholders as soon as an image is uploaded to your server.
 
-```python
-from PIL import Image
-from imghash import encode
-
-# Open image and generate a tiny string (approx 30 chars)
-image = Image.open("photo.jpg")
-image_hash = encode(image)
-
-# Store 'image_hash' in your database alongside the image URL
-# Example: "LxH2cX2swxX8l}WDjtaggJfjfQfj"
-```
 ---
 
 ## 💡 Use Cases
@@ -97,10 +82,10 @@ image_hash = encode(image)
 Instead of showing a spinner or a blank box, show a beautiful blurred version of the actual image. This keeps users engaged and makes the site feel faster.
 
 ### 2. Social Media Feeds
-For infinite scroll feeds (like Instagram or Pinterest), send the `blysh` string in your initial JSON request. The app can render the entire feed layout with placeholders before a single byte of actual image data is even downloaded.
+For infinite scroll feeds (like Instagram or Pinterest), send the `useblysh` string in your initial JSON request. The app can render the entire feed layout with placeholders before a single byte of actual image data is even downloaded.
 
 ### 3. SEO & Layout Stability (CLS)
-Prevent "layout shift" where content jumps around as images load. `blysh` reserves the correct aspect ratio and space immediately.
+Prevent "layout shift" where content jumps around as images load. `useblysh` reserves the correct aspect ratio and space immediately.
 
 ---
 

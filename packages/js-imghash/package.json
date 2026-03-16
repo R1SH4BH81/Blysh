@@ -29,7 +29,7 @@
   },
   "homepage": "https://useblysh.vercel.app",
   "bugs": {
-    "url": "https://useblysh.vercel.app/report-issues"
+    "url": "https://useblysh.vercel.app/report-issue"
   },
   "peerDependencies": {
     "react": ">=16.8.0",
