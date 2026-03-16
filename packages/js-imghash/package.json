@@ -1,0 +1,57 @@
+{
+  "name": "imghash",
+  "version": "1.0.0",
+  "description": "High-performance visual hashing for seamless image loading. Encode images into tiny strings and decode into beautiful, fast-loading blurs.",
+  "main": "./dist/imghash.js",
+  "module": "./dist/imghash.mjs",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/imghash.mjs",
+      "require": "./dist/imghash.js",
+      "types": "./dist/index.d.ts"
+    }
+  },
+  "files": [
+    "dist",
+    "README.md"
+  ],
+  "scripts": {
+    "build": "vite build",
+    "dev": "vite",
+    "preview": "vite preview"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yourusername/imghash.git"
+  },
+  "homepage": "https://imghash.io",
+  "bugs": {
+    "url": "https://github.com/yourusername/imghash/issues"
+  },
+  "peerDependencies": {
+    "react": ">=16.8.0",
+    "react-dom": ">=16.8.0"
+  },
+  "devDependencies": {
+    "@types/react": "^19.0.0",
+    "@types/react-dom": "^19.0.0",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "typescript": "^5.0.0",
+    "vite": "^6.0.0",
+    "vite-plugin-dts": "^4.0.0"
+  },
+  "keywords": [
+    "imghash",
+    "blurhash",
+    "placeholder",
+    "progressive-loading",
+    "image-performance",
+    "react",
+    "typescript",
+    "nextjs"
+  ],
+  "author": "Rishabh Mishra <rishabhmishra.81@gmail.com>",
+  "license": "MIT"
+}
