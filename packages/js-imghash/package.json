@@ -7,9 +7,9 @@
   "types": "./dist/index.d.ts",
   "exports": {
     ".": {
+      "types": "./dist/index.d.ts",
       "import": "./dist/imghash.mjs",
-      "require": "./dist/imghash.js",
-      "types": "./dist/index.d.ts"
+      "require": "./dist/imghash.js"
     }
   },
   "files": [
@@ -19,15 +19,16 @@
   "scripts": {
     "build": "vite build",
     "dev": "vite",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "test": "vitest"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/yourusername/imghash.git"
+    "url": "https://github.com/R1SH4BH81/ImgHash"
   },
-  "homepage": "https://imghash.io",
+  "homepage": "https://img-hash.vercel.app",
   "bugs": {
-    "url": "https://github.com/yourusername/imghash/issues"
+    "url": "https://img-hash.vercel.app/issues"
   },
   "peerDependencies": {
     "react": ">=16.8.0",
@@ -36,11 +37,13 @@
   "devDependencies": {
     "@types/react": "^19.0.0",
     "@types/react-dom": "^19.0.0",
+    "@vitejs/plugin-react": "^4.3.4",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "typescript": "^5.0.0",
     "vite": "^6.0.0",
-    "vite-plugin-dts": "^4.0.0"
+    "vite-plugin-dts": "^4.0.0",
+    "vitest": "^2.1.8"
   },
   "keywords": [
     "imghash",

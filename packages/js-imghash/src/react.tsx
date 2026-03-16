@@ -23,6 +23,7 @@ export const ImgHashCanvas = forwardRef<HTMLCanvasElement, ImgHashCanvasProps>(
 
       try {
         const pixels = decode(hash, width, height, punch);
+        // @ts-ignore
         const imageData = new ImageData(pixels, width, height);
         ctx.putImageData(imageData, 0, 0);
       } catch (error) {
@@ -53,8 +54,10 @@ export interface ImgHashProps extends React.ImgHTMLAttributes<HTMLImageElement> 
  * A smart image component that shows a blurred placeholder (hash)
  * until the actual image (src) loads.
  */
-export const ImgHash: React.FC<ImgHashProps> = ({ hash, src, className, style, ...props }) => {
+export const ImgHash: React.FC<ImgHashProps> = ({ hash, src, className, style: outerStyle, ...props }) => {
   const [loaded, setLoaded] = React.useState(false);
+  // @ts-ignore
+  const { style: imgStyle, ...restProps } = props;
 
   return (
     <div 
@@ -63,7 +66,7 @@ export const ImgHash: React.FC<ImgHashProps> = ({ hash, src, className, style, .
         position: 'relative', 
         overflow: 'hidden', 
         display: 'inline-block',
-        ...style 
+        ...outerStyle 
       }}
     >
       {/* Blurred Placeholder */}
@@ -81,7 +84,7 @@ export const ImgHash: React.FC<ImgHashProps> = ({ hash, src, className, style, .
       
       {/* Real Image */}
       <img
-        {...props}
+        {...restProps}
         src={src}
         onLoad={() => setLoaded(true)}
         style={{
@@ -90,7 +93,7 @@ export const ImgHash: React.FC<ImgHashProps> = ({ hash, src, className, style, .
           height: '100%',
           opacity: loaded ? 1 : 0,
           transition: 'opacity 0.5s ease-in-out',
-          ...props.style
+          ...imgStyle
         }}
       />
     </div>

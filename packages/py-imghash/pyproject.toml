@@ -6,7 +6,7 @@ build-backend = "setuptools.build_meta"
 name = "imghash"
 version = "1.0.0"
 authors = [
-  { name="Your Name", email="your@email.com" },
+  { name="Rishabh Mishra", email="rishabhmishra.81@gmail.com" },
 ]
 description = "A simple image hashing library (BlurHash-like) in Python."
 readme = "README.md"
@@ -22,5 +22,5 @@ dependencies = [
 ]
 
 [project.urls]
-"Homepage" = "https://github.com/your/repo"
-"Bug Tracker" = "https://github.com/your/repo/issues"
+"Homepage" = "https://github.com/rishabhmishra/imghash"
+"Bug Tracker" = "https://github.com/rishabhmishra/imghash/issues"
