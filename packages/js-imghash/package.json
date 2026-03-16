@@ -1,5 +1,5 @@
 {
-  "name": "blysh",
+  "name": "useblysh",
   "version": "1.0.0",
   "description": "High-performance visual hashing for seamless image loading. Encode images into tiny strings and decode into beautiful, fast-loading blurs.",
   "main": "./dist/imghash.js",
@@ -25,11 +25,11 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/R1SH4BH81/ImgHash.git"
+    "url": "https://github.com/R1SH4BH81/Blysh.git"
   },
-  "homepage": "https://img-hash.vercel.app",
+  "homepage": "https://useblysh.vercel.app",
   "bugs": {
-    "url": "https://img-hash.vercel.app/issues"
+    "url": "https://useblysh.vercel.app/report-issues"
   },
   "peerDependencies": {
     "react": ">=16.8.0",
