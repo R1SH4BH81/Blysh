@@ -1,14 +1,14 @@
-# ⚡ imagehash
+# ⚡ blysh
 
 **High-performance visual hashing for seamless image loading.** The unified toolkit for Python and JavaScript to turn heavy images into elegant, byte-sized blurs.
 
-[![npm version](https://img.shields.io/npm/v/imagehash?color=blue&style=flat-square)](https://www.npmjs.com/package/imagehash)
+[![npm version](https://img.shields.io/npm/v/blysh?color=blue&style=flat-square)](https://www.npmjs.com/package/blysh)
 [![pypi version](https://img.shields.io/pypi/v/imghash?color=green&style=flat-square)](https://pypi.org/project/imghash)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg?style=flat-square)](https://opensource.org/licenses/MIT)
 
 ---
 
-## 🌟 Why imagehash?
+## 🌟 Why blysh?
 
 Standard `loading="lazy"` leaves users staring at empty white boxes. **imghash** eliminates this "broken" feel by encoding your images into tiny strings that can be sent inside your JSON API response.
 
@@ -25,7 +25,7 @@ Standard `loading="lazy"` leaves users staring at empty white boxes. **imghash**
 
 ### Frontend (React/NPM)
 ```bash
-npm install imagehash
+npm install blysh
 ```
 
 
@@ -39,7 +39,7 @@ npm install imagehash
 Generate hashes directly in the browser during an image upload.
 
 ```tsx
-import { encodeImage } from 'imagehash';
+import { encodeImage } from 'blysh';
 
 const handleUpload = (event) => {
   const file = event.target.files[0];
@@ -60,7 +60,7 @@ const handleUpload = (event) => {
 The `ImageHash` component handles everything: it shows the blur immediately and fades in the real image once it's ready.
 
 ```tsx
-import { ImageHash } from 'imagehash';
+import { ImageHash } from 'blysh';
 
 const MyGallery = ({ storedHash, imageUrl }) => (
   <ImageHash 

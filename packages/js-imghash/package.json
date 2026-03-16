@@ -1,5 +1,5 @@
 {
-  "name": "imagehash",
+  "name": "blysh",
   "version": "1.0.0",
   "description": "High-performance visual hashing for seamless image loading. Encode images into tiny strings and decode into beautiful, fast-loading blurs.",
   "main": "./dist/imghash.js",
