@@ -1,6 +1,7 @@
 {
   "name": "useblysh",
   "version": "1.0.1",
+  "type": "module",
   "description": "High-performance visual hashing for seamless image loading. Encode images into tiny strings and decode into beautiful, fast-loading blurs.",
   "main": "./dist/useblysh.js",
   "module": "./dist/useblysh.mjs",
