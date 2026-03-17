@@ -64,7 +64,8 @@ The `ImageHash` component handles everything: it shows the blur immediately and 
 import { ImageHash } from 'useblysh';
 
 const MyGallery = ({ storedHash, imageUrl }) => (
-  <ImageHash 
+  <ImageHash
+    key={item.id}             // Passing the key is a good thing
     hash={storedHash}        // The short string from your DB
     src={imageUrl}          // The real high-quality image URL
     className="w-full h-64 rounded-xl"
