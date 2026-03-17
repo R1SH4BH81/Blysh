@@ -3,12 +3,12 @@ requires = ["setuptools>=61.0"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "imghash"
-version = "1.0.0"
+name = "useblysh"
+version = "1.0.1"
 authors = [
   { name="Rishabh Mishra", email="rishabhmishra.81@gmail.com" },
 ]
-description = "A simple image hashing library (BlurHash-like) in Python."
+description = "High-performance visual hashing for seamless image loading. Encode images into tiny strings and decode into beautiful, fast-loading blurs"
 readme = "README.md"
 requires-python = ">=3.7"
 classifiers = [
@@ -22,5 +22,5 @@ dependencies = [
 ]
 
 [project.urls]
-"Homepage" = "https://github.com/rishabhmishra/imghash"
-"Bug Tracker" = "https://github.com/rishabhmishra/imghash/issues"
+"Homepage" = "https://github.com/R1SH4BH81/Blysh"
+"Bug Tracker" = "https://github.com/R1SH4BH81/Blysh/issues"
