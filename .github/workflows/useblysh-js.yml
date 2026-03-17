@@ -11,10 +11,14 @@ on:
     paths:
       - 'packages/js-useblysh/**'
 
+# Prevents multiple deployments from running at once
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
 jobs:
   build:
     runs-on: ubuntu-latest
-
     defaults:
       run:
         working-directory: packages/js-useblysh
@@ -42,11 +46,12 @@ jobs:
   publish:
     needs: build
     runs-on: ubuntu-latest
+    # Trigger only on version tags
     if: github.event_name == 'push' && startsWith(github.ref, 'refs/tags/v')
 
     permissions:
       contents: read
-      id-token: write
+      id-token: write # Required for --provenance
 
     defaults:
       run:
