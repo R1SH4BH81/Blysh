@@ -61,15 +61,14 @@ const handleUpload = (event) => {
 The `ImageHash` component handles everything: it shows the blur immediately and fades in the real image once it's ready.
 
 ```tsx
-import { ImageHash } from 'useblysh';
-
-const MyGallery = ({ storedHash, imageUrl }) => (
-  <ImageHash 
-    hash={storedHash}        // The short string from your DB
-    src={imageUrl}          // The real high-quality image URL
-    className="w-full h-64 rounded-xl"
-  />
-);
+import { ImageHash } from 'useblysh'; 
+ 
+<ImageHash 
+  key={id}                  // Passing the key is a good thing 
+  hash={storedHash}        // The short string from your DB 
+  src={imageUrl}          // The real high-quality image URL 
+  className="w-full h-64 rounded-xl" 
+/>
 ```
 
 
