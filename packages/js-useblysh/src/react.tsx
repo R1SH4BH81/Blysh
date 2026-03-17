@@ -99,6 +99,7 @@ export const ImageHash: React.FC<ImageHashProps> = ({ hash, src, className, styl
       {/* Blurred Placeholder */}
       <ImageHashCanvas
         hash={hash}
+        className={className}
         style={{
           position: 'absolute',
           inset: 0,
@@ -113,6 +114,7 @@ export const ImageHash: React.FC<ImageHashProps> = ({ hash, src, className, styl
       {/* Real Image */}
       <img
         {...restProps}
+        className={className}
         src={src}
         loading="lazy" // Native browser lazy loading for the actual image file
         onLoad={() => setLoaded(true)}
