@@ -3,10 +3,9 @@ name: useblysh-js CI
 on:
   push:
     branches: [ main ]
+    tags: [ 'v*' ]
     paths:
       - 'packages/js-useblysh/**'
-  push:
-    tags: [ 'v*' ] # No paths filter here! This ensures tags always trigger.
   pull_request:
     branches: [ main ]
     paths:
