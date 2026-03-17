@@ -36,7 +36,7 @@ npm install useblysh
 ## 🚀 Simple Examples
 
 
-### **Frontend: Generate Hash (JavaScript/NPM)**
+### **Generate Hash**
 Generate hashes directly in the browser during an image upload.
 
 ```tsx

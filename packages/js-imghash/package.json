@@ -1,6 +1,6 @@
 {
   "name": "useblysh",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "High-performance visual hashing for seamless image loading. Encode images into tiny strings and decode into beautiful, fast-loading blurs.",
   "main": "./dist/imghash.js",
   "module": "./dist/imghash.mjs",
@@ -47,8 +47,7 @@
     "vitest": "^2.1.8"
   },
   "keywords": [
-    "imghash",
-    "blurhash",
+    "useblysh",
     "placeholder",
     "progressive-loading",
     "image-performance",
