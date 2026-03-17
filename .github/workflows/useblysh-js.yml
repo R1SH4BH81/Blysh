@@ -1,14 +1,14 @@
-name: JS CI
+name: useblysh-js CI
 
 on:
   push:
     branches: [ main ]
     paths:
-      - 'packages/js-imghash/**'
+      - 'packages/js-useblysh/**'
   pull_request:
     branches: [ main ]
     paths:
-      - 'packages/js-imghash/**'
+      - 'packages/js-useblysh/**'
 
 jobs:
   build:
@@ -16,7 +16,7 @@ jobs:
 
     defaults:
       run:
-        working-directory: packages/js-imghash
+        working-directory: packages/js-useblysh
 
     steps:
       - uses: actions/checkout@v4
@@ -26,7 +26,7 @@ jobs:
         with:
           node-version: '20'
           cache: 'npm'
-          cache-dependency-path: packages/js-imghash/package-lock.json
+          cache-dependency-path: packages/js-useblysh/package-lock.json
 
       - name: Install dependencies
         run: npm ci

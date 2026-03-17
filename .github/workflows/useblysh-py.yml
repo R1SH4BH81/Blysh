@@ -1,14 +1,14 @@
-name: Python CI
+name: useblysh-py CI
 
 on:
   push:
     branches: [ main ]
     paths:
-      - 'packages/py-imghash/**'
+      - 'packages/py-useblysh/**'
   pull_request:
     branches: [ main ]
     paths:
-      - 'packages/py-imghash/**'
+      - 'packages/py-useblysh/**'
 
 jobs:
   build:
@@ -16,7 +16,7 @@ jobs:
 
     defaults:
       run:
-        working-directory: packages/py-imghash
+        working-directory: packages/py-useblysh
 
     strategy:
       matrix:
