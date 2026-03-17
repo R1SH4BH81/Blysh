@@ -2,14 +2,14 @@
   "name": "useblysh",
   "version": "1.0.1",
   "description": "High-performance visual hashing for seamless image loading. Encode images into tiny strings and decode into beautiful, fast-loading blurs.",
-  "main": "./dist/imghash.js",
-  "module": "./dist/imghash.mjs",
+  "main": "./dist/useblysh.js",
+  "module": "./dist/useblysh.mjs",
   "types": "./dist/index.d.ts",
   "exports": {
     ".": {
       "types": "./dist/index.d.ts",
-      "import": "./dist/imghash.mjs",
-      "require": "./dist/imghash.js"
+      "import": "./dist/useblysh.mjs",
+      "require": "./dist/useblysh.js"
     }
   },
   "files": [

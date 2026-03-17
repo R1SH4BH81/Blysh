@@ -2,7 +2,7 @@
 
 **High-performance visual hashing for seamless image loading.** The unified toolkit for Python and JavaScript to turn heavy images into elegant, byte-sized blurs.
 
-[![pypi version](https://img.shields.io/pypi/v/imghash?color=green&style=flat-square)](https://pypi.org/project/imghash)
+[![pypi version](https://img.shields.io/pypi/v/useblysh?color=green&style=flat-square)](https://pypi.org/project/useblysh)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg?style=flat-square)](https://opensource.org/licenses/MIT)
 
 ---
@@ -21,7 +21,7 @@ Standard `loading="lazy"` leaves users staring at empty white boxes. **useblysh*
 
 ### Backend (Python)
 ```bash
-pip install imghash
+pip install useblysh
 ```
 
 ---
@@ -33,7 +33,7 @@ Generate hashes on your server using the Python library.
 
 ```python
 from PIL import Image
-from imghash import encode
+from useblysh import encode
 
 # Open an image using Pillow
 image = Image.open("path/to/image.jpg")

@@ -1,14 +1,14 @@
 import React, { useEffect, useRef, forwardRef, useImperativeHandle, useState } from 'react';
 import { decode } from './decoder';
 
-export interface ImgHashCanvasProps extends React.CanvasHTMLAttributes<HTMLCanvasElement> {
+export interface ImageHashCanvasProps extends React.CanvasHTMLAttributes<HTMLCanvasElement> {
   hash: string;
   width?: number;
   height?: number;
   punch?: number;
 }
 
-export const ImgHashCanvas = forwardRef<HTMLCanvasElement, ImgHashCanvasProps>(
+export const ImageHashCanvas = forwardRef<HTMLCanvasElement, ImageHashCanvasProps>(
   ({ hash, width = 32, height = 32, punch = 1.0, ...props }, ref) => {
     const canvasRef = useRef<HTMLCanvasElement>(null);
     const [isVisible, setIsVisible] = useState(false);
@@ -51,7 +51,7 @@ export const ImgHashCanvas = forwardRef<HTMLCanvasElement, ImgHashCanvasProps>(
           const imageData = new ImageData(pixels, width, height);
           ctx.putImageData(imageData, 0, 0);
         } catch (error) {
-          console.error('Failed to render ImgHash:', error);
+          console.error('Failed to render ImageHash:', error);
         }
       }, 0);
 
@@ -70,9 +70,9 @@ export const ImgHashCanvas = forwardRef<HTMLCanvasElement, ImgHashCanvasProps>(
   }
 );
 
-ImgHashCanvas.displayName = 'ImgHashCanvas';
+ImageHashCanvas.displayName = 'ImageHashCanvas';
 
-export interface ImgHashProps extends React.ImgHTMLAttributes<HTMLImageElement> {
+export interface ImageHashProps extends React.ImgHTMLAttributes<HTMLImageElement> {
   hash: string;
   src: string;
 }
@@ -81,7 +81,7 @@ export interface ImgHashProps extends React.ImgHTMLAttributes<HTMLImageElement> 
  * A smart image component that shows a blurred placeholder (hash)
  * until the actual image (src) loads.
  */
-export const ImgHash: React.FC<ImgHashProps> = ({ hash, src, className, style: outerStyle, ...props }) => {
+export const ImageHash: React.FC<ImageHashProps> = ({ hash, src, className, style: outerStyle, ...props }) => {
   const [loaded, setLoaded] = React.useState(false);
   // @ts-ignore
   const { style: imgStyle, ...restProps } = props;
@@ -97,7 +97,7 @@ export const ImgHash: React.FC<ImgHashProps> = ({ hash, src, className, style: o
       }}
     >
       {/* Blurred Placeholder */}
-      <ImgHashCanvas
+      <ImageHashCanvas
         hash={hash}
         style={{
           position: 'absolute',

@@ -14,9 +14,9 @@ export default defineConfig({
   build: {
     lib: {
       entry: path.resolve(__dirname, 'src/index.ts'),
-      name: 'ImgHash',
+      name: 'UseBlysh',
       formats: ['es', 'umd'],
-      fileName: (format) => `imghash.${format === 'es' ? 'mjs' : 'js'}`,
+      fileName: (format) => `useblysh.${format === 'es' ? 'mjs' : 'js'}`,
     },
     rollupOptions: {
       external: ['react', 'react-dom'],
