@@ -24,10 +24,13 @@ export const ImageHashCanvas = forwardRef<HTMLCanvasElement, ImageHashCanvasProp
         (entries) => {
           if (entries[0].isIntersecting) {
             setIsVisible(true);
-            observer.disconnect(); // Stop observing once it becomes visible
+            observer.disconnect(); 
           }
         },
-        { rootMargin: '100px' } // Start decoding 100px before it enters the screen
+        { 
+          rootMargin: '200px', // Increased margin to trigger earlier
+          threshold: 0.01      // Trigger as soon as even 1% is visible
+        } 
       );
 
       observer.observe(currentCanvas);
@@ -105,9 +108,10 @@ export const ImageHash: React.FC<ImageHashProps> = ({ hash, src, className, styl
           inset: 0,
           width: '100%',
           height: '100%',
+          objectFit: 'inherit', // Inherit from parent className
           opacity: loaded ? 0 : 1,
           transition: 'opacity 0.5s ease-in-out',
-          pointerEvents: 'none' // Prevent canvas from blocking right-clicks on the image
+          pointerEvents: 'none'
         }}
       />
       
@@ -116,12 +120,13 @@ export const ImageHash: React.FC<ImageHashProps> = ({ hash, src, className, styl
         {...restProps}
         className={className}
         src={src}
-        loading="lazy" // Native browser lazy loading for the actual image file
+        loading="lazy"
         onLoad={() => setLoaded(true)}
         style={{
           display: 'block',
           width: '100%',
           height: '100%',
+          objectFit: 'inherit', // Inherit from parent className
           opacity: loaded ? 1 : 0,
           transition: 'opacity 0.5s ease-in-out',
           ...imgStyle
