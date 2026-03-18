@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "useblysh"
-version = "1.0.1"
+version = "1.0.2"
 authors = [
   { name="Rishabh Mishra", email="rishabhmishra.81@gmail.com" },
 ]
