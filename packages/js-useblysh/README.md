@@ -1,9 +1,8 @@
 # ⚡ useblysh
 
-**High-performance visual hashing for seamless image loading.** The unified toolkit for Python and JavaScript to turn heavy images into elegant, byte-sized blurs.
+**High-performance visual hashing for seamless image loading.** Encode images into tiny strings and decode into beautiful, fast-loading blurs.
 
 [![npm version](https://img.shields.io/npm/v/useblysh?color=blue&style=flat-square)](https://www.npmjs.com/package/useblysh)
-[![pypi version](https://img.shields.io/pypi/v/useblysh?color=green&style=flat-square)](https://pypi.org/project/useblysh)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg?style=flat-square)](https://opensource.org/licenses/MIT)
 
 ---
@@ -12,7 +11,6 @@
 
 Standard `loading="lazy"` leaves users staring at empty white boxes. **useblysh** eliminates this "broken" feel by encoding your images into tiny strings that can be sent inside your JSON API response.
 
-* **Full-Stack:** Identical hashing logic for Python (Backend) and React (Frontend).
 * **Zero Layout Shift:** Reserve image space instantly to prevent page jumping.
 * **Performance:** Replace 1MB images with 20-byte strings during the initial load.
 * **Modern:** Fully typed with TypeScript and optimized for React 18/19.
@@ -25,18 +23,16 @@ Standard `loading="lazy"` leaves users staring at empty white boxes. **useblysh*
 
 ## 🛠️ Installation
 
-### Frontend (React/NPM)
 ```bash
 npm install useblysh
 ```
-
 
 ---
 
 ## 🚀 Simple Examples
 
+### **1. Generate Hash (Browser)**
 
-### **Generate Hash**
 Generate hashes directly in the browser during an image upload.
 
 ```tsx
@@ -57,21 +53,51 @@ const handleUpload = (event) => {
 };
 ```
 
-### **Frontend: Display Placeholder (React)**
+### **2. Display Placeholder (React)**
+
 The `ImageHash` component handles everything: it shows the blur immediately and fades in the real image once it's ready.
 
 ```tsx
 import { ImageHash } from 'useblysh'; 
  
 <ImageHash 
-  key={id}                  // Passing the key is a good thing 
+  key={id}                  // Passing a unique key is recommended 
   hash={storedHash}        // The short string from your DB 
   src={imageUrl}          // The real high-quality image URL 
   className="w-full h-64 rounded-xl" 
 />
 ```
 
+### **3. Advanced Decoding (Manual Control)** 
 
+If you only want the blur placeholder without the built-in image handling, use `ImageHashCanvas`. Note: You'll need to manage the actual image loading and transitions yourself. 
+
+```tsx
+import { ImageHashCanvas } from 'useblysh'; 
+import { useState } from 'react'; 
+
+const CustomImage = ({ hash, src }) => { 
+  const [loaded, setLoaded] = useState(false); 
+  
+  return ( 
+    <div className="relative"> 
+      {!loaded && ( 
+        <ImageHashCanvas 
+          hash={hash} 
+          width={32} 
+          height={32} 
+          className="absolute inset-0 w-full h-full" 
+        /> 
+      )} 
+      <img 
+        src={src} 
+        onLoad={() => setLoaded(true)} 
+        className={`transition-opacity ${loaded ? 'opacity-100' : 'opacity-0'}`} 
+      /> 
+    </div> 
+  ); 
+}; 
+```
 
 ---
 

@@ -25,18 +25,32 @@ Standard `loading="lazy"` leaves users staring at empty white boxes. **useblysh*
 
 ## 🛠️ Installation
 
-### Frontend (React/NPM)
+<details open>
+<summary><b>Frontend (React/NPM)</b></summary>
+
 ```bash
 npm install useblysh
 ```
+</details>
+
+<details>
+<summary><b>Backend (Python/PyPI)</b></summary>
+
+```bash
+pip install useblysh
+```
+</details>
 
 
 ---
 
 ## 🚀 Simple Examples
 
+### **1. Generate Hash**
 
-### **Frontend: Generate Hash (JavaScript/NPM)**
+<details open>
+<summary><b>JavaScript (Browser)</b></summary>
+
 Generate hashes directly in the browser during an image upload.
 
 ```tsx
@@ -56,22 +70,71 @@ const handleUpload = (event) => {
   };
 };
 ```
+</details>
 
-### **Frontend: Display Placeholder (React)**
+<details>
+<summary><b>Python (Backend)</b></summary>
+
+Generate hashes on your server using the Python library.
+
+```python
+from PIL import Image
+from useblysh import encode
+
+# Open an image using Pillow
+image = Image.open("path/to/image.jpg")
+
+# Generate the hash (components define detail level)
+hash = encode(image, components_x=4, components_y=3)
+print(f"Generated Hash: {hash}")
+```
+</details>
+
+### **2. Display Placeholder (React)**
+
 The `ImageHash` component handles everything: it shows the blur immediately and fades in the real image once it's ready.
 
 ```tsx
 import { ImageHash } from 'useblysh'; 
  
 <ImageHash 
-  key={id}                  // Passing the key is a good thing 
+  key={id}                  // Passing a unique key is recommended 
   hash={storedHash}        // The short string from your DB 
   src={imageUrl}          // The real high-quality image URL 
   className="w-full h-64 rounded-xl" 
 />
 ```
 
+### **3. Advanced Decoding (Manual Control)** 
 
+If you only want the blur placeholder without the built-in image handling, use `ImageHashCanvas`. Note: You'll need to manage the actual image loading and transitions yourself. 
+
+```tsx
+import { ImageHashCanvas } from 'useblysh'; 
+import { useState } from 'react'; 
+
+const CustomImage = ({ hash, src }) => { 
+  const [loaded, setLoaded] = useState(false); 
+  
+  return ( 
+    <div className="relative"> 
+      {!loaded && ( 
+        <ImageHashCanvas 
+          hash={hash} 
+          width={32} 
+          height={32} 
+          className="absolute inset-0 w-full h-full" 
+        /> 
+      )} 
+      <img 
+        src={src} 
+        onLoad={() => setLoaded(true)} 
+        className={`transition-opacity ${loaded ? 'opacity-100' : 'opacity-0'}`} 
+      /> 
+    </div> 
+  ); 
+}; 
+```
 
 ---
 
