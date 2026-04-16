@@ -1,0 +1,33 @@
+name: Sync Repowiki to GitHub Wiki
+
+on:
+  push:
+    paths:
+      - '.qoder/repowiki/**'
+  workflow_dispatch:
+
+jobs:
+  sync-wiki:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.10'
+
+      - name: Run Transformation Script
+        run: python scripts/sync-wiki.py
+
+      - name: Push to Wiki
+        uses: Andrew-Chen-Wang/github-wiki-action@v4
+        with:
+          wiki_folder: wiki_output
+          path: wiki_repo
+          commit_message: "docs: update repowiki content"
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}

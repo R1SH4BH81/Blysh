@@ -32,6 +32,8 @@ share/python-wheels/
 MANIFEST
 
 # Environments
+# Wiki
+wiki_output/
 .env
 .venv
 env/
